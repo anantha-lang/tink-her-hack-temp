@@ -33,13 +33,10 @@ class Opportunity(BaseModel):
     change: str
     risk: str
 
-@app.get("/")
-def read_root():
-    return {"status": "ArthaDhan API is running."}
-
 @app.get("/api/health")
 def read_health():
     return {"health": "ok"}
+
 
 @app.get("/api/opportunities", response_model=List[Opportunity])
 def get_opportunities():
