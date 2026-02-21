@@ -63,14 +63,16 @@ const TechnicalChart: React.FC<TechnicalChartProps> = ({ data, type = 'candlesti
                     type: 'volume',
                 },
                 priceScaleId: '', // set as an overlay
+            });
+            chart.priceScale('').applyOptions({
                 scaleMargins: {
                     top: 0.8,
                     bottom: 0,
-                },
+                }
             });
 
             // Map existing data to volume
-            const volumeData = data.map((d, index) => {
+            const volumeData = data.map((d) => {
                 const isGreen = d.close >= d.open;
                 const vol = d.volume || Math.floor(Math.random() * 5000 + 1000);
                 return {
