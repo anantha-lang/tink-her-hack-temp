@@ -23,7 +23,10 @@ const PortfolioHealth: React.FC = () => {
     useEffect(() => {
         axios.get<PortfolioData>('/api/portfolio-health')
             .then((response) => {
-                setData(response.data);
+                const d = response.data;
+                if (d && Array.isArray(d.sectors)) {
+                    setData(d);
+                }
                 setLoading(false);
             })
             .catch((error: any) => {

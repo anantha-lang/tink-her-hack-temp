@@ -71,11 +71,12 @@ const OpportunityScanner: React.FC<OpportunityScannerProps> = ({ isDashboard = f
     useEffect(() => {
         axios.get<Opportunity[]>('/api/opportunities')
             .then((response) => {
-                setCards(response.data);
+                setCards(Array.isArray(response.data) ? response.data : []);
                 setLoading(false);
             })
             .catch((error: any) => {
                 console.error("Error fetching opportunities:", error);
+                setCards([]);
                 setLoading(false);
             });
     }, []);
