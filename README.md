@@ -2,27 +2,34 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# [ArthaDhan] 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: [Securock]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: [Anantha T R] - [Lourdes Matha College of Science and Technology]
+- Member 2: [Aswani M S] - [Lourdes Matha College of Science and Technology]
 
 ### Hosted Project Link
 [mention your project hosted link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+[Our project ArthaDhan is a trading platform which positions AI as an Intelligent research assistant and opportunity scanner that helps traders discover and eveluate trading opportunities across stocks and commodities]
 
 ### The Problem statement
-[What problem are you solving?]
+[Indian retail traders face several critical challenges: information overload with 5,000+ tradable
+securities, inability to monitor markets continuously, difficulty identifying opportunities that match their
+trading style, lack of contextual understanding beyond raw technical/fundamental data, and delayed
+discovery of market-moving events. Professional traders and institutions have teams of analysts, retail
+traders have none]
 
 ### The Solution
-[How are you solving it?]
+[Our platform deploys AI as a personal research analyst that works 24/7 to scan the entire market,
+identify patterns and anomalies, contextualize opportunities based on current events and historical
+performance, filter results based on user's portfolio and preferences, and present findings with clear
+explanations of why something deserves attention and what factors to consider before acting.]
 
 ---
 
@@ -31,10 +38,11 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: [TypeScript, Python,HTML,CSS]
+- Frameworks used: [React, Fast API]
+- Libraries used: package.json
+ (framer-motion, recharts, Tailwind CSS) and requirements.txt(yfinance, pandas)
+-  Tools used: [Git Hub, Gemini,Chatgpt,antigravity,terminal]
 
 **For Hardware:**
 - Main components: [List main components]
@@ -46,10 +54,12 @@
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Insights: [AI generated daily summary of overnight market]
+- Opportunity Scanner: [Real time identification of stocks and commodities]
+- Stock/Community deep dive: [Comprehensive AI analysis ]
+- Portfolio Health Check: [Daily AI assesment of portfolio]
+- Backtested ideas
+- Risk Warnings
 
 ---
 
@@ -59,13 +69,28 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
-```
+# Backend Installation
+cd backend
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+cd ..
+
+# Frontend Installation
+cd frontend
+npm install
+cd ..
+
 
 #### Run
-```bash
-[Run commands - e.g., npm start, python app.py]
-```
+# Terminal 1: Run Backend
+cd backend
+.\venv\Scripts\activate
+uvicorn main:app --reload --port 8000
+
+# Terminal 2: Run Frontend
+cd frontend
+npm run dev
 
 ### For Hardware:
 
@@ -83,26 +108,38 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+(https://github.com/user-attachments/assets/9a05bc44-ccd6-4cde-846e-3729c78282f5)
+ts/landing-page.png)
+*Figure 1: The premium dark-themed Landing Page featuring animated typography and glassmorphism design.*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![2](https://github.com/user-attachments/assets/1c594fb5-9a22-4eed-9450-92603ef17229)
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+
+
+![Risk![3](https://github.com/user-attachments/assets/ee9deac3-ef8f-403b-907c-5712a4250480)
+*Figure 3: Deep Dive Analysis providing risk analytics, portfolio health breakdowns, and dynamic charting.*
+![4](https://github.com/user-attachments/assets/0a3aea94-7afa-49d0-b5fa-7f836b64319d)
+![5](https://github.com/user-attachments/assets/c9be5f40-e6ae-4e83-a755-9f52fd1a804a)
+
 
 #### Diagrams
 
 **System Architecture:**
+![7](https://github.com/user-attachments/assets/07791083-5d93-4721-8f4d-95c9bb9778cf)
 
-![Architecture Diagram](docs/architecture.png)
+
+*The ArthaDhan platform follows a decoupled client-server architecture. The Frontend (Client) is a Single Page Application (SPA) built with React and TypeScript, leveraging Vite for lightning-fast bundling and Tailwind CSS for adaptive styling. It communicates via RESTful APIs via Axios to the Backend (Server). The Backend is an asynchronous Python service built on FastAPI and Uvicorn. It acts as the core engine, utilizing `yfinance` and `pandas` to fetch, sanitize, and analyze live Indian stock market data before serving it back to the client interface for real-time visualization through Recharts and Lightweight Charts.*
 *Explain your system architecture - components, data flow, tech stack interaction*
 
 **Application Workflow:**
+![8](https://github.com/user-attachments/assets/62f1a777-83c2-41fe-af5f-449bdbca1a28)
 
-![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
+
+1. User Initiation: User accesses the dashboard and requests data (e.g., viewing a specific stock's deep-dive).
+2. API Request: The React frontend dispatches an asynchronous HTTP GET request mapping to the target FastAPI endpoint.
+3. Data Aggregation: The FastAPI backend securely routes the request, executing yfinance to pull live market constraints and historical candlestick data.
+4. Processing: Pandas normalizes the data structures, calculating real-time technical indicators or risk metrics.
+5. Delivery & Render: Data is returned as a structured JSON payload to the frontend, which instantly triggers a state update, smoothly animating the Recharts UI with Framer Motion to reflect the new financial data.
 
 ---
 
@@ -118,7 +155,8 @@ List the key features of your project:
 
 #### Build Photos
 
-![Team](Add photo of your team here)
+![Team]![p](https://github.com/user-attachments/assets/45214b46-922f-4efd-b3cf-a59305900de9)
+
 
 ![Components](Add photo of your components here)
 *List out all components shown*
@@ -230,138 +268,14 @@ xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
 
 **Total Estimated Cost:** ₹[Amount]
 
-#### Assembly Instructions
-
-**Step 1: Prepare Components**
-1. Gather all components listed in the BOM
-2. Check component specifications
-3. Prepare your workspace
-![Step 1](images/assembly-step1.jpg)
-*Caption: All components laid out*
-
-**Step 2: Build the Power Supply**
-1. Connect the power rails on the breadboard
-2. Connect Arduino 5V to breadboard positive rail
-3. Connect Arduino GND to breadboard negative rail
-![Step 2](images/assembly-step2.jpg)
-*Caption: Power connections completed*
-
-**Step 3: Add Components**
-1. Place LEDs on breadboard
-2. Connect resistors in series with LEDs
-3. Connect LED cathodes to GND
-4. Connect LED anodes to Arduino digital pins (2-6)
-![Step 3](images/assembly-step3.jpg)
-*Caption: LED circuit assembled*
 
 **Step 4: [Continue for all steps...]**
 
-**Final Assembly:**
-![Final Build](images/final-build.jpg)
-*Caption: Completed project ready for testing*
-
----
-
-### For Scripts/CLI Tools:
-
-#### Command Reference
-
-**Basic Usage:**
-```bash
-python script.py [options] [arguments]
-```
-
-**Available Commands:**
-- `command1 [args]` - Description of what command1 does
-- `command2 [args]` - Description of what command2 does
-- `command3 [args]` - Description of what command3 does
-
-**Options:**
-- `-h, --help` - Show help message and exit
-- `-v, --verbose` - Enable verbose output
-- `-o, --output FILE` - Specify output file path
-- `-c, --config FILE` - Specify configuration file
-- `--version` - Show version information
-
-**Examples:**
-
-```bash
-# Example 1: Basic usage
-python script.py input.txt
-
-# Example 2: With verbose output
-python script.py -v input.txt
-
-# Example 3: Specify output file
-python script.py -o output.txt input.txt
-
-# Example 4: Using configuration
-python script.py -c config.json --verbose input.txt
-```
-
-#### Demo Output
-
-**Example 1: Basic Processing**
-
-**Input:**
-```
-This is a sample input file
-with multiple lines of text
-for demonstration purposes
-```
-
-**Command:**
-```bash
-python script.py sample.txt
-```
-
-**Output:**
-```
-Processing: sample.txt
-Lines processed: 3
-Characters counted: 86
-Status: Success
-Output saved to: output.txt
-```
-
-**Example 2: Advanced Usage**
-
-**Input:**
-```json
-{
-  "name": "test",
-  "value": 123
-}
-```
-
-**Command:**
-```bash
-python script.py -v --format json data.json
-```
-
-**Output:**
-```
-[VERBOSE] Loading configuration...
-[VERBOSE] Parsing JSON input...
-[VERBOSE] Processing data...
-{
-  "status": "success",
-  "processed": true,
-  "result": {
-    "name": "test",
-    "value": 123,
-    "timestamp": "2024-02-07T10:30:00"
-  }
-}
-[VERBOSE] Operation completed in 0.23s
-```
-
----
 
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
+[https://drive.google.com/file/d/1V5luvdsGXdK0DE7NBYAuF1R5sBFdfsr4/view?usp=drive_link]
 
 *Explain what the video demonstrates - key features, user flow, technical highlights*
 
@@ -372,9 +286,9 @@ python script.py -v --format json data.json
 
 ## AI Tools Used (Optional - For Transparency Bonus)
 
-If you used AI tools during development, document them here for transparency:
+Chatgpt,Gemini,Antigravity
 
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
+**Tool Used:** [GitHub,ChatGPT, Claude]
 
 **Purpose:** [What you used it for]
 - Example: "Generated boilerplate React components"
@@ -386,7 +300,7 @@ If you used AI tools during development, document them here for transparency:
 - "Debug this async function that's causing race conditions"
 - "Optimize this database query for better performance"
 
-**Percentage of AI-generated code:** [Approximately X%]
+**Percentage of AI-generated code:** [100%]
 
 **Human Contributions:**
 - Architecture design and planning
@@ -400,9 +314,8 @@ If you used AI tools during development, document them here for transparency:
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+- [Aswani M S]: [Specific contributions -Frontend development, API integration]
+- [Anantha T R]: [Specific contributions - Backend development, Database design]
 
 ---
 
