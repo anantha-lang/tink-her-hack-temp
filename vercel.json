@@ -21,8 +21,8 @@
             "destination": "/api/index.py"
         },
         {
-            "source": "/(?!api).*$",
-            "destination": "/frontend/$0"
+            "source": "/:path*",
+            "destination": "/frontend/:path*"
         }
     ]
 }
