@@ -31,7 +31,7 @@ const PaperTrading: React.FC = () => {
     const [activeOrder, setActiveOrder] = useState<{ ticker: string; action: 'BUY' | 'SELL'; pos?: Trade } | null>(null);
 
     const fetchPaperTradingData = () => {
-        axios.get<PaperTradingData>('http://localhost:8000/api/paper-trading')
+        axios.get<PaperTradingData>('/api/paper-trading')
             .then(response => {
                 setData(response.data);
                 setLoading(false);
@@ -209,7 +209,7 @@ const PaperTrading: React.FC = () => {
                     pos={activeOrder.pos}
                     onClose={() => setActiveOrder(null)}
                     onOrderSuccess={(trade) => {
-                        axios.post('http://localhost:8000/api/trade', trade).then(() => {
+                        axios.post('/api/trade', trade).then(() => {
                             fetchPaperTradingData(); // Refresh to catch new history and P&L
                         }).catch(console.error);
                     }}

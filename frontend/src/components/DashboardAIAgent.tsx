@@ -7,7 +7,7 @@ const DashboardAIAgent: React.FC = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/market-analysis')
+        axios.get('/api/market-analysis')
             .then(res => {
                 setAnalysis(res.data);
                 setLoading(false);

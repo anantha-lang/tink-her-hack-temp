@@ -21,7 +21,7 @@ const OptionsIntelligence: React.FC = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get<IOptionsIntelligence>('http://localhost:8000/api/options-intelligence')
+        axios.get<IOptionsIntelligence>('/api/options-intelligence')
             .then(res => {
                 setData(res.data);
                 setLoading(false);

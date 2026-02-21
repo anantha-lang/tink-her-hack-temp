@@ -46,7 +46,7 @@ const StrategyBuilder: React.FC = () => {
     const handleBacktest = () => {
         setLoading(true);
         // Mimics the body we configured in FastAPI StrategyConfig
-        axios.post<StrategyResult>('http://localhost:8000/api/strategy/backtest', {
+        axios.post<StrategyResult>('/api/strategy/backtest', {
             name: strategyName,
             entryConditions: entryConditions,
             exitConditions: exitConditions

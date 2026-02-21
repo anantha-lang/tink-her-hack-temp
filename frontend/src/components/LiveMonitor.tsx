@@ -31,7 +31,7 @@ const LiveMonitor: React.FC = () => {
 
     useEffect(() => {
         // Fetch Screener Data
-        axios.get<ScreenerData>('http://localhost:8000/api/screener')
+        axios.get<ScreenerData>('/api/screener')
             .then(res => {
                 setData(res.data);
             })
@@ -41,7 +41,7 @@ const LiveMonitor: React.FC = () => {
     useEffect(() => {
         // Fetch Chart Data for selected ticker
         setLoading(true);
-        axios.get(`http://localhost:8000/api/chart-data/${selectedTicker}`)
+        axios.get(`/api/chart-data/${selectedTicker}`)
             .then(res => {
                 setChartData(res.data);
                 setLoading(false);
@@ -153,7 +153,7 @@ const LiveMonitor: React.FC = () => {
                     action={orderAction}
                     onClose={() => setOrderAction(null)}
                     onOrderSuccess={(trade) => {
-                        axios.post('http://localhost:8000/api/trade', trade)
+                        axios.post('/api/trade', trade)
                             .catch(console.error);
                     }}
                 />

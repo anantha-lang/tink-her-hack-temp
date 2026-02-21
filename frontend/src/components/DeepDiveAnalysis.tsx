@@ -28,8 +28,8 @@ const DeepDiveAnalysis: React.FC<DeepDiveProps> = ({ ticker, onBack }) => {
 
     useEffect(() => {
         Promise.all([
-            axios.get<DeepDiveData>(`http://localhost:8000/api/deep-dive/${ticker}`),
-            axios.get(`http://localhost:8000/api/chart-data/${ticker}`)
+            axios.get<DeepDiveData>(`/api/deep-dive/${ticker}`),
+            axios.get(`/api/chart-data/${ticker}`)
         ]).then(([deepDiveRes, chartRes]) => {
             setData(deepDiveRes.data);
             setChartData(chartRes.data);

@@ -69,7 +69,7 @@ const OpportunityScanner: React.FC<OpportunityScannerProps> = ({ isDashboard = f
     };
 
     useEffect(() => {
-        axios.get<Opportunity[]>('http://localhost:8000/api/opportunities')
+        axios.get<Opportunity[]>('/api/opportunities')
             .then((response) => {
                 setCards(response.data);
                 setLoading(false);

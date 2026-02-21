@@ -30,7 +30,7 @@ const AIAnalyst: React.FC<AIAnalystProps> = ({ currentTab }) => {
             if (isInitial) setLoading(true);
             else setIsSyncing(true);
 
-            axios.get('http://localhost:8000/api/market-analysis')
+            axios.get('/api/market-analysis')
                 .then(response => {
                     setAnalysis(response.data);
                     if (isInitial) setLoading(false);

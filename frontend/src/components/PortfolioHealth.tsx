@@ -21,7 +21,7 @@ const PortfolioHealth: React.FC = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get<PortfolioData>('http://localhost:8000/api/portfolio-health')
+        axios.get<PortfolioData>('/api/portfolio-health')
             .then((response) => {
                 setData(response.data);
                 setLoading(false);
