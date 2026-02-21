@@ -1,6 +1,0 @@
-fastapi
-pydantic
-yfinance
-pandas
-uvicorn
-httpx
